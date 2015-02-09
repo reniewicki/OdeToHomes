@@ -1,0 +1,80 @@
+﻿@model OdeToHomes.Models.FloorPlan
+
+@{
+    ViewBag.Title = "Archive";
+}
+@section featured{
+    @Html.Partial("_Menu")
+}
+
+<h2>Archive</h2>
+
+<h3>Are you sure you want to archive this to X-Deleted?</h3>
+<fieldset>
+    <legend>FloorPlan</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ModelNum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ModelNum)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Sqft)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sqft)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Beds)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Beds)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Baths)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Baths)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Size)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Size)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Sections)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sections)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.OurPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OurPrice)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.TheirPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TheirPrice)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Archive" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

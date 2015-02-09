@@ -1,0 +1,17 @@
+﻿@model IEnumerable<OdeToHomes.Models.Series>
+
+@{
+    ViewBag.Title = null;
+}
+@section featured{
+    @Html.Partial("_Menu")
+}
+
+
+<h2>Series</h2>
+
+@Html.Partial("_Series")
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>

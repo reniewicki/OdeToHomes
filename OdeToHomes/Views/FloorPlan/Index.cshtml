@@ -1,0 +1,53 @@
+﻿@model IEnumerable<OdeToHomes.Models.SearchListViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+@section featured{
+    @Html.Partial("_Menu")
+}
+
+<h2>
+    Showing Models for @ViewBag.messageString
+    </h2>
+
+@if(!User.IsInRole("SuperAdmin")){ 
+<p>
+    @Html.ActionLink("Change My Destination State", "StateSelect")
+</p>
+}
+
+@if (User.IsInRole("SuperAdmin"))
+{ 
+<form method="get" action="@Url.Action("Index")"
+     data-oth-ajax="true" data-oth-target="#FloorplanList">
+
+   <input type="search" name="searchTerm" data-oth-autocomplete="@Url.Action("Autocomplete")" />
+   <input type="submit" value="Search By Model Number" />
+</form>
+
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+        
+    
+}
+
+
+    @Html.Partial("_FloorPlanSeries", Model)
+
+
+
+
+
+
+
+
+
+
+
+

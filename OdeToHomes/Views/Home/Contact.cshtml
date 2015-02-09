@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+@section featured{
+    @Html.Partial("_Menu")
+}
+
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<section class="contact">
+    <header>
+        <h3>Phone</h3>
+    </header>
+    <p>
+        <span class="label">Main:</span>
+        <span>425.555.0100</span>
+    </p>
+    <p>
+        <span class="label">After Hours:</span>
+        <span>425.555.0199</span>
+    </p>
+</section>
+
+<section class="contact">
+    <header>
+        <h3>Email</h3>
+    </header>
+    <p>
+        <span class="label">Customer Service:</span>
+        <span><a href="mailto:CSRep@example.com">CSRep@example.com</a></span>
+    </p>
+    <p>
+        <span class="label">Sales:</span>
+        <span><a href="mailto:Sales@example.com">Sales@example.com</a></span>
+    </p>
+    <p>
+        <span class="label">General:</span>
+        <span><a href="mailto:General@example.com">General@example.com</a></span>
+    </p>
+</section>
+
+<section class="contact">
+    <header>
+        <h3>Address</h3>
+    </header>
+    <p>
+        One Microsoft Way<br />
+        St George, UT 84770
+    </p>
+</section>

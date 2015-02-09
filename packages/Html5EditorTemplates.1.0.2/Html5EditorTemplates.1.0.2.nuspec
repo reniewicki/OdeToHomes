@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Html5EditorTemplates</id>
+    <version>1.0.2</version>
+    <title>HTML5 Editor Templates for MVC 3</title>
+    <authors>Paul Tyng</authors>
+    <owners>Paul Tyng</owners>
+    <licenseUrl>https://raw.github.com/paultyng/Html5EditorTemplates/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/paultyng/Html5EditorTemplates</projectUrl>
+    <iconUrl>https://github.com/srkirkland/Html5MvcTemplates/raw/master/src/html5Templates.Web/Images/Html5.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>HTML 5 EditorTemplates for MVC 3 in Razor.  A fork of skirkland's MvcHtml5Templates with additional functionality.  Adds support for placeholder and required attributes among other additions.</description>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>razor mvc3 editortemplates html5 mvc</tags>
+    <references />
+  </metadata>
+</package>

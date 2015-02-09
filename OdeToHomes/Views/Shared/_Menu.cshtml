@@ -1,0 +1,16 @@
+﻿<div id="floating-box">
+    <nav>
+        <ul id="menu">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            @if (User.IsInRole("SuperAdmin"))
+            {
+                <li>@Html.ActionLink("States", "Index", "State")</li>
+                <li>@Html.ActionLink("Series", "Index", "Series")</li>
+            }
+            <li>@Html.ActionLink("Pricing", "Index", "FloorPlan")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <li></li>
+        </ul>
+    </nav>
+</div>

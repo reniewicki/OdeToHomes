@@ -1,0 +1,40 @@
+﻿@model OdeToHomes.Models.SearchListViewModel
+
+
+<tr>
+    <td>
+        <a href= "@Url.Action("Details", new { id = Model.Id })">
+        <img src='~/Images/Pics/@(Model.ModelNum).jpg' /></a>
+        </td>
+    <td>
+        @Html.DisplayFor(modelModel => Model.ModelNum)
+    </td>
+    <td>
+        @Html.DisplayFor(modelModel => Model.Sqft) sf
+    </td>
+    <td>
+        @Html.DisplayFor(modelModel => Model.Beds)
+    </td>
+    <td>
+        @Html.DisplayFor(modelModel => Model.Baths)
+    </td>
+    <td>
+        @Html.DisplayFor(modelModel => Model.Size)
+    </td>
+    <td>
+        @Html.DisplayFor(modelModel => Model.Sections)
+    </td>
+    <td>$@String.Format("{0:#,###,###,##0}", Model.OurPrice)
+    </td>
+    <td>$@String.Format("{0:#,###,###,##0}", Model.TheirPrice)
+    </td>
+    @if (User.IsInRole("SuperAdmin"))
+{ 
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Archive", "Archive", new { id = Model.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+    </td>
+    }
+</tr>
+    

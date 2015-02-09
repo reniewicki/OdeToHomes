@@ -1,0 +1,20 @@
+﻿@model OdeToHomes.Models.State
+
+@{
+    ViewBag.Title = "StateIndex";
+}
+@section featured{
+    @Html.Partial("_Menu")
+}
+
+
+<h2>Series for @Model.Name</h2>
+@if (Model.Serieses != null)
+{
+    @Html.Partial("_Series", @Model.Serieses)
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "State") |
+    @Html.ActionLink("Edit", "Edit", "State", new { id=Model.Id }, null)
+</div>

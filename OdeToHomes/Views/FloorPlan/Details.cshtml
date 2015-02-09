@@ -1,0 +1,16 @@
+﻿@model OdeToHomes.Models.FloorPlan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@section featured{
+    @Html.Partial("_MenuDetails", Model)
+}
+
+<h5><img src='~/Images/@(Model.ModelNum).jpg' /></h5>
+
+
+@Html.Partial("_Stds", Model)
+
+

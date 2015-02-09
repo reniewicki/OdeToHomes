@@ -1,0 +1,21 @@
+﻿@model OdeToHomes.Models.AboutModel
+
+@{
+    ViewBag.Title = "About";
+}
+@section featured{
+    @Html.Partial("_Menu")
+}
+
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@Model.Name</h2>
+</hgroup>
+
+<p>Blah Blah About company</p>
+
+
+<h3>Headquarters based in</h3>
+@Model.Location
+

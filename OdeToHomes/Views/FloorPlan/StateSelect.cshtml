@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Select a State";
+}
+@section featured{
+    @Html.Partial("_Menu")
+}
+
+@using (Html.BeginForm("StateSelect", "FloorPLan", FormMethod.Post, new { id = "TheForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+            <legend>Select a State</legend>
+        <div>
+            @Html.DropDownList("Id", (SelectList) ViewData["listStates"], "Select a State", new{
+          onchange = "document.getElementById('TheForm').submit();"
+       })
+        </div>
+        
+
+    </fieldset>
+    
+}

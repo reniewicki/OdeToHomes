@@ -1,0 +1,28 @@
+﻿@model OdeToHomes.Models.Series
+
+@{
+    ViewBag.Title = "Delete";
+}
+@section featured{
+    @Html.Partial("_Menu")
+}
+
+
+<h3>Are you sure you want to delete this Series?</h3>
+<h5>Any floorplans in this series will be put in X-Deleted</h5>
+<fieldset>
+    <legend>Series</legend>
+
+    
+    <h2>
+        @Html.DisplayFor(model => model.Name)
+    </h2>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+

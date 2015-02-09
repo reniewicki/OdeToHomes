@@ -1,0 +1,102 @@
+﻿@model OdeToHomes.Models.FloorPlan
+
+@{
+    ViewBag.Title = "Create";
+}
+@section featured{
+    @Html.Partial("_Menu")
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>FloorPlan</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ModelNum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ModelNum)
+            @Html.ValidationMessageFor(model => model.ModelNum)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sqft)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sqft)
+            @Html.ValidationMessageFor(model => model.Sqft)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Beds)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Beds)
+            @Html.ValidationMessageFor(model => model.Beds)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Baths)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Baths)
+            @Html.ValidationMessageFor(model => model.Baths)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Size)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Size)
+            @Html.ValidationMessageFor(model => model.Size)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sections)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sections)
+            @Html.ValidationMessageFor(model => model.Sections)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OurPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OurPrice)
+            @Html.ValidationMessageFor(model => model.OurPrice)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TheirPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TheirPrice)
+            @Html.ValidationMessageFor(model => model.TheirPrice)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SeriesLabel)
+        </div>
+        <div>
+            @Html.DropDownList("listSeries", "Select a Series")
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    
+}

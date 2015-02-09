@@ -1,0 +1,33 @@
+﻿@model IEnumerable<OdeToHomes.Models.ViewState>
+
+@{
+    ViewBag.Title = "Index";
+}
+@section featured{
+    @Html.Partial("_Menu")
+}
+
+
+<h2>States</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+    
+<table class="review">
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        @*<td>Series: @Html.DisplayFor(modelItem => item.NumberOfSeries)</td>*@
+        <td>
+            Shows @Html.DisplayFor(modelItem => item.NumberOfSeries)
+            @Html.ActionLink("Series", "StateIndex", "Series", new { id=item.Id }, null) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,28 @@
+﻿@model OdeToHomes.Models.FloorPlan
+@{
+    
+    var dataFile = "test";
+    if (File.Exists(Server.MapPath("~/Stds/" + @Model.ModelNum + ".txt")))
+    {
+        dataFile = Server.MapPath("~/Stds/" + @Model.ModelNum + ".txt");
+    }
+    else
+    {
+        dataFile = Server.MapPath("~/Stds/std1.txt");
+    }
+    Array userData = File.ReadAllLines(dataFile);
+}
+
+
+<div id="features"><span style="font-size:1.25em; text-align:center; font-weight:600;"><U>Standard Features:</U></span><br />
+
+@foreach (string dataLine in userData)
+{
+    foreach (string dataItem in dataLine.Split(','))
+    {
+        @dataItem <text>&nbsp;</text>
+    }
+    <br />
+}
+</div>
+

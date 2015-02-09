@@ -1,0 +1,67 @@
+﻿@model IEnumerable<OdeToHomes.Models.SearchListViewModel>
+
+<div id="FloorplanList">
+    @foreach (var itemSeries in ViewData["listSeries"] as List<string>)
+    {
+        
+        
+        <table class="review">
+        <tr class="review2"><th colspan="10" scope="colgroup" >@itemSeries Series</th></tr>
+           
+        <tr>
+            <th>
+                Click Here
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelNum)
+                @*Model Number*@
+            </th>
+            <th>
+                @*Html.DisplayNameFor(model => model.Sqft)*@
+                Sqft
+            </th>
+            <th>
+                @*Html.DisplayNameFor(model => model.Beds)*@
+                Beds
+            </th>
+            <th>
+                @*Html.DisplayNameFor(model => model.Baths)*@
+                Baths
+            </th>
+            <th>
+                @*Html.DisplayNameFor(model => model.Size)*@
+                Size
+            </th>
+            <th>
+                @*Html.DisplayNameFor(model => model.Sections)*@
+                Sections
+            </th>
+            <th>
+                @*Html.DisplayNameFor(model => model.OurPrice)*@
+                Our Price
+            </th>
+            <th>
+                @*Html.DisplayNameFor(model => model.TheirPrice)*@
+                Their Price
+            </th>
+            <th></th>
+        
+        </tr>
+        <tr><hr /></tr>
+
+
+        @foreach (var item in Model)
+        {
+            if (item.Series == itemSeries)
+            {
+                @Html.Partial("_FloorPlan", item);
+            }
+           
+        
+       
+        }
+
+    </table>
+        
+    }
+    </div>
